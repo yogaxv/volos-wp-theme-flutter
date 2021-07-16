@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:volos_wp_theme_dart/screens/nav/infoscreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,11 +15,7 @@ class HomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: size.height,
-            width: size.width * 20 / 100,
-            color: Color.fromRGBO(54, 43, 46, 1),
-          ),
+          InfoScreen(size: size),
           Expanded(
             child: Container(
               height: size.height,
