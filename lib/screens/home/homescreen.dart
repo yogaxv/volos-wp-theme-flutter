@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:volos_wp_theme_dart/screens/nav/infoscreen.dart';
+import 'package:volos_wp_theme_dart/screens/profile/profilescreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,10 +18,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           InfoScreen(size: size),
           Expanded(
-            child: Container(
-              height: size.height,
-              color: Colors.yellow,
-            ),
+            child: ProfileScreen(size: size),
           )
         ],
       ),
