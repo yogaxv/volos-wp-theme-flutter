@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:volos_wp_theme_dart/screens/nav/infoscreen.dart';
 import 'package:volos_wp_theme_dart/screens/profile/profilescreen.dart';
+import 'package:volos_wp_theme_dart/screens/services/servicesscreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -8,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    ScrollController controller = ScrollController();
 
     return Container(
       width: size.width,
@@ -18,8 +20,15 @@ class HomeScreen extends StatelessWidget {
         children: [
           InfoScreen(size: size),
           Expanded(
-            child: ProfileScreen(size: size),
-          )
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  ProfileScreen(size: size),
+                  ServicesScreen(size: size)
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
