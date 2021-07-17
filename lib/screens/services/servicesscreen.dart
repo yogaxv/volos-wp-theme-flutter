@@ -40,7 +40,7 @@ class ServicesScreen extends StatelessWidget {
       height: size.height,
       width: double.infinity,
       color: Color.fromRGBO(48, 43, 41, 1),
-      padding: EdgeInsets.all(75),
+      padding: EdgeInsets.fromLTRB(120, 68, 120, 68),
       child: Row(
         children: [
           Column(
@@ -57,7 +57,7 @@ class ServicesScreen extends StatelessWidget {
           ),
           Expanded(
               child: Padding(
-            padding: EdgeInsets.all(80),
+            padding: EdgeInsets.only(left: 20, top: 75, bottom: 140),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
