@@ -7,6 +7,35 @@ class ServicesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
+      primary: Colors.black87,
+      minimumSize: Size(88, 36),
+      padding: EdgeInsets.all(20),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25.0),
+      ),
+      side: BorderSide(width: 1, color: Colors.yellow),
+    ).copyWith(
+      backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+        (Set<MaterialState> states) {
+          if (states.contains(MaterialState.hovered)) return Colors.yellow[600];
+
+          return Colors.transparent;
+        },
+      ),
+      // side: MaterialStateProperty.resolveWith<BorderSide>(
+      //   (Set<MaterialState> states) {
+      //     if (states.contains(MaterialState.pressed))
+      //       return BorderSide(
+      //         color: Theme.of(context).colorScheme.primary,
+      //         width: 1,
+      //       );
+
+      //     return BorderSide(width: 1, color: Colors.yellow);
+      //   },
+      // ),
+    );
+
     return Container(
       height: size.height,
       width: double.infinity,
@@ -71,8 +100,8 @@ class ServicesScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _button("Download CV"),
-                    _button("Check My Portfolio"),
+                    _button("Download CV", outlineButtonStyle),
+                    _button("Check My Portfolio", outlineButtonStyle),
                   ],
                 )
               ],
@@ -83,18 +112,12 @@ class ServicesScreen extends StatelessWidget {
     );
   }
 
-  Widget _button(title) {
+  Widget _button(title, style) {
     return Container(
         width: 200,
         height: 50,
         child: OutlinedButton(
-          style: OutlinedButton.styleFrom(
-            padding: EdgeInsets.all(20),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25.0),
-            ),
-            side: BorderSide(width: 1, color: Colors.yellow),
-          ),
+          style: style,
           onPressed: () {},
           child: Text(title,
               style: GoogleFonts.poppins(
