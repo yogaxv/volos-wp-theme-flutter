@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:volos_wp_theme_dart/screens/nav/infoscreen.dart';
 import 'package:volos_wp_theme_dart/screens/portofolio/portfolioscreen.dart';
 import 'package:volos_wp_theme_dart/screens/profile/profilescreen.dart';
+import 'package:volos_wp_theme_dart/screens/resume/resumescreen.dart';
 import 'package:volos_wp_theme_dart/screens/services/servicesscreen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -26,6 +27,7 @@ class HomeScreen extends StatelessWidget {
                   ProfileScreen(size: size),
                   ServicesScreen(size: size),
                   PortfolioScreen(size: size),
+                  ResumeScreen(size: size),
                 ],
               ),
             ),
